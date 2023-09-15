@@ -2,7 +2,7 @@
 
 import './globals.css'
 import { Inter, Roboto, Poppins } from 'next/font/google'
-import Navbar from './Components/Navbar/Navbar'
+import Navbar from './Components/Navbar/page'
 import Footer from './Components/Footer/Footer'
 import { ThemeProvider } from 'next-themes'
 

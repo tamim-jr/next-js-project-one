@@ -1,22 +1,10 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useEffect } from 'react';
 import React from 'react'
 import { BsTextIndentRight, BsFillSunFill, BsMoonFill } from "react-icons/bs";
-import { useTheme } from 'next-themes'
 
 const Navbar = () => {
-    const { systemTheme, theme, setTheme } = useTheme();
-    const [mounted, setMounted] = useState(false);
-
-    useEffect(() => {
-        setMounted(true);
-    }, []);
-
-    if (!mounted) return null;
-
-    const currentTheme = theme === 'system' ? systemTheme : theme;
     return (
         <nav className="z-10 w-full items-center flex flex-row justify-between font-mono text-sm lg:flex md-16 pt-3 px-5 lg:px-[15vw]">
             <Link href="/" className="text-2xl font-bold">
@@ -33,17 +21,7 @@ const Navbar = () => {
                         }}
                     >SignUp</button></Link>
                 </menu>
-                <div className='flex justify-center'>
-                    {currentTheme === 'dark' ? (
-                        <button
-                            className='' onClick={() => setTheme('light')}
-                        ><BsFillSunFill />
-                        </button>
-                    ) : (<button
-                        className='' onClick={() => setTheme('dark')}
-                    ><BsMoonFill />
-                    </button>)} 
-                </div>
+                
                 <div className="text-[#b1b0b0] text-2xl md:hidden">
                     <BsTextIndentRight />
                 </div>
